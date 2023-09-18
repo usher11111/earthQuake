@@ -61,7 +61,7 @@ if uploaded_file is not None:
 if st.button("Submit"):
     try:
         if email:
-            if address = "valid":
+            if address == "valid":
             submit(model_type, df, email)
         else:
             st.write("Enter a valid reciever's email from the sidebar on the left")
