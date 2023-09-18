@@ -18,6 +18,8 @@ import regex as re
 # import custom dependencies
 from utils  import submit
 
+password = st.secrets["AUTH_PASSWORD"]
+
 
 # Set title
 st.title("Earthquake Intensity Prediction")
@@ -62,7 +64,7 @@ if st.button("Submit"):
     try:
         if email:
             if address == "valid":
-                submit(model_type, df, email)
+                submit(model_type, df, email, password)
             else:
              st.write("Enter a valid reciever's email from the sidebar on the left")   
         else:
@@ -72,5 +74,4 @@ if st.button("Submit"):
 
 
 
-pwd = st.secrets["AUTH_PASSWORD"]
-st.write(pwd)
+
