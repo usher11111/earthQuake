@@ -18,14 +18,13 @@ import regex as re
 # import custom dependencies
 from utils  import submit
 
+
+# grab password
 password = st.secrets["AUTH_PASSWORD"]
 
 
 # Set title
 st.title("Earthquake Intensity Prediction")
-
-
-
 
 
 # Sidebar for user input
@@ -34,6 +33,7 @@ st.sidebar.subheader("User Input")
 model_type = st.sidebar.selectbox("Select a model type", ["GRU", "LSTM", "RNN"])
 # receiver's email input
 email = st.sidebar.text_input("Enter your email address")
+
 
 # Check if the email is valid
 if email:
@@ -44,19 +44,10 @@ if email:
         address = "valid"
 
 
-
-
-
-
-
-
-
 # Load data using file_uploader
 uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-
-
 
 
 # Submit Button! When the button is clicked, the submit function is executed!!
