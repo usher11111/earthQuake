@@ -72,5 +72,5 @@ if st.button("Submit"):
 
 
 
-pwd = st.secrets["AUTH_PASSWORD"]\
+pwd = st.secrets["AUTH_PASSWORD"]
 st.write(pwd)
