@@ -37,6 +37,9 @@ email = st.sidebar.text_input("Enter your email address")
 if email:
     if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
         st.sidebar.write("Please enter a valid email address")
+        address = "invalid"
+    else:
+        address = "valid"
 
 
 
@@ -58,6 +61,7 @@ if uploaded_file is not None:
 if st.button("Submit"):
     try:
         if email:
+            if address = "valid":
             submit(model_type, df, email)
         else:
             st.write("Enter a valid reciever's email from the sidebar on the left")
