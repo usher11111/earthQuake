@@ -11,7 +11,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-password = st.secrets["AUTH_PASSWORD"]
+
 
 
 
@@ -97,14 +97,14 @@ def evaluate_model(model, x_test, y_test):
 
 
 # Define a function for sending emails
-def send_email(alert_data, email_):
+def send_email(alert_data, email_, password_):
 
     # Email configuration
     smtp_server = "smtp.gmail.com"  # Replace with your SMTP server address
     smtp_port = 587  # Replace with your SMTP server's port number (587 for TLS)
     sender_email = "ushersense@gmail.com"  # Replace with your email address
     receiver_email = email_  # Replace with the recipient's email address
-    password = password  # Replace with your email password
+    password = password_  # Replace with your email password
 
     # Create the email content
     subject = 'Earthquake alert'
@@ -145,7 +145,7 @@ def send_email(alert_data, email_):
 
 
 # Define the submit function
-def submit(model_type, df, email):
+def submit(model_type, df, email, password):
     try: 
         df_ts = preprocess_data(df)
         train, test = train_test_split(df_ts, test_size=0.2, shuffle=False)
@@ -171,7 +171,7 @@ def submit(model_type, df, email):
         alert_data = response_data[response_data['prediction'] > 1]
 
         # Send email
-        send_email(alert_data, email)
+        send_email(alert_data, email, password)
 
     except:
         st.write("Please upload a valid file")
