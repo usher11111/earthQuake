@@ -77,11 +77,11 @@ def preprocess_data(df):
 # Define a function for model training
 def train_model(model_type, x_train, y_train):
     if model_type == 'GRU':
-        model = trainGRU(x_train, y_train, 1)
+        model = trainGRU(x_train, y_train, 20)
     elif model_type == 'LSTM':
-        model = trainLSTM(x_train, y_train, 1)
+        model = trainLSTM(x_train, y_train, 20)
     elif model_type == 'RNN':
-        model = trainRNN(x_train, y_train, 1)
+        model = trainRNN(x_train, y_train, 20)
     return model
 
 
