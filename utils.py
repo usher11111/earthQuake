@@ -12,9 +12,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 
-
-
-
 # Function to convert the raw data to timeseries format
 def get_timeseries_data(data):
     data.set_index('Timestamp', inplace=True)
@@ -86,6 +83,7 @@ def train_model(model_type, x_train, y_train):
     elif model_type == 'RNN':
         model = trainRNN(x_train, y_train, 1)
     return model
+
 
 # Define a function for performance evaluation
 def evaluate_model(model, x_test, y_test):
