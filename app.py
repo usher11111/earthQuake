@@ -63,6 +63,8 @@ if st.button("Submit"):
         if email:
             if address == "valid":
                 submit(model_type, df, email)
+            else:
+             st.write("Enter a valid reciever's email from the sidebar on the left")   
         else:
             st.write("Enter a valid reciever's email from the sidebar on the left")
     except:
