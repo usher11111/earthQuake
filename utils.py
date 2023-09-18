@@ -11,6 +11,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+password = st.secrets["AUTH_PASSWORD"]
+
 
 
 # Function to convert the raw data to timeseries format
@@ -102,7 +104,7 @@ def send_email(alert_data, email_):
     smtp_port = 587  # Replace with your SMTP server's port number (587 for TLS)
     sender_email = "ushersense@gmail.com"  # Replace with your email address
     receiver_email = email_  # Replace with the recipient's email address
-    password = "mzgk ekml ecow qkek"  # Replace with your email password
+    password = password  # Replace with your email password
 
     # Create the email content
     subject = 'Earthquake alert'
