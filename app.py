@@ -69,3 +69,8 @@ if st.button("Submit"):
             st.write("Enter a valid reciever's email from the sidebar on the left")
     except:
         st.write("Please uopload a valid csv having fields: Timestamp, X, Y, Z, Intensity")
+
+
+
+pwd = st.secrets["AUTH_PASSWORD"]\
+st.write(pwd)
